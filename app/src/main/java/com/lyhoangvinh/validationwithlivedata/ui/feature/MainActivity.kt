@@ -1,13 +1,8 @@
 package com.lyhoangvinh.validationwithlivedata.ui.feature
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.lyhoangvinh.validationwithlivedata.R
+import com.lyhoangvinh.validationwithlivedata.ui.base.activity.BaseSingleFragmentActivity
+import com.lyhoangvinh.validationwithlivedata.ui.feature.login.LoginFragment
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+class MainActivity : BaseSingleFragmentActivity<LoginFragment>() {
+    override fun createFragment() = LoginFragment()
 }
