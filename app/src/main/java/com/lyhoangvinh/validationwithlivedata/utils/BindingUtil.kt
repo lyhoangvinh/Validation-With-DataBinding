@@ -1,5 +1,6 @@
 package com.lyhoangvinh.validationwithlivedata.utils
 
+import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
 import androidx.databinding.BindingAdapter
@@ -9,7 +10,9 @@ object BindingUtil {
     @JvmStatic
     @BindingAdapter("error")
     fun setError(editText: EditText, str: String?) {
-        editText.error = str.toString()
+        if (!TextUtils.isEmpty(str)) {
+            editText.error = str.toString()
+        }
     }
 
     @JvmStatic
