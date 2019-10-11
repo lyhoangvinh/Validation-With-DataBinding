@@ -37,6 +37,17 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
+fun Activity.createDialog(): Dialog? {
+    val progressDialog = Dialog(this)
+    progressDialog.let {
+        it.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        it.setContentView(R.layout.progress_dialog)
+        it.setCancelable(false)
+        it.setCanceledOnTouchOutside(false)
+        return it
+    }
+}
+
 @SuppressLint("SimpleDateFormat")
 fun TextView.formatDate(time: Long) {
     try {

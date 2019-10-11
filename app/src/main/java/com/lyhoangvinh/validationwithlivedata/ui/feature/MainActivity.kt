@@ -1,7 +1,8 @@
-package com.lyhoangvinh.validationwithlivedata
+package com.lyhoangvinh.validationwithlivedata.ui.feature
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.lyhoangvinh.validationwithlivedata.R
 
 class MainActivity : AppCompatActivity() {
 
