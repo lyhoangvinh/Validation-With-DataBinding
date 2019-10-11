@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.lyhoangvinh.validationwithlivedata.di.qualifier.ApplicationContext
 import com.lyhoangvinh.validationwithlivedata.MyApplication
+import com.lyhoangvinh.validationwithlivedata.ui.feature.login.LoginForm
 import com.lyhoangvinh.validationwithlivedata.utils.DateDeserializer
 import dagger.Module
 import dagger.Provides
@@ -40,4 +41,8 @@ class AppModule {
     @Provides
     @Singleton
     fun provideUIThreadExecutor(): UIThreadExecutor = UIThreadExecutor.getInstance()
+
+    @Provides
+    @Singleton
+    fun provideLoginFrom() = LoginForm()
 }

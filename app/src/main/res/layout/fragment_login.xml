@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lyhoangvinh.validationwithlivedata.ui.feature.login.LoginViewModel" />
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -10,6 +17,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textNoSuggestions|textEmailAddress"
+            android:text="@={vm.login.fields.email}"
+            app:error="@{vm.login.emailError}"
+            app:onFocus="@{vm.onFocusEmail}"
             android:hint="@string/user_name" />
 
         <EditText
@@ -18,6 +30,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/edtName"
             android:layout_marginTop="8dp"
+            android:text="@={vm.login.fields.password}"
+            app:error="@{vm.login.passwordError}"
+            app:onFocus="@{vm.onFocusPassword}"
             android:hint="@string/pass_word" />
 
         <Button
@@ -27,7 +42,10 @@
             android:layout_below="@id/edtPassword"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:enabled="false"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:enabled="@{vm.login.valid}"
+            android:onClick="@{() -> vm.login.onClick()}"
             android:text="@string/login" />
 
         <TextView

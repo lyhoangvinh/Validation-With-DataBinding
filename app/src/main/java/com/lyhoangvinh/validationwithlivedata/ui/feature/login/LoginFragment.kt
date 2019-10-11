@@ -10,6 +10,6 @@ class LoginFragment : BaseViewModelFragment<FragmentLoginBinding, LoginViewModel
     override fun getLayoutResource() = R.layout.fragment_login
     override fun createViewModelClass() = LoginViewModel::class.java
     override fun initialize(view: View, ctx: Context?) {
-
+        binding.vm = viewModel
     }
 }
