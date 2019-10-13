@@ -5,8 +5,9 @@ import androidx.databinding.Bindable
 import androidx.lifecycle.MutableLiveData
 import com.lyhoangvinh.validationwithdatabinding.BR
 import com.lyhoangvinh.validationwithdatabinding.data.entities.LoginFields
+import javax.inject.Inject
 
-class LoginForm : BaseObservable() {
+class LoginForm @Inject constructor() : BaseObservable() {
 
     private val fields = LoginFields()
 

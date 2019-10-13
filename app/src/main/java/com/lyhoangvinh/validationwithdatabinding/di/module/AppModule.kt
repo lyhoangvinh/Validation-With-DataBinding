@@ -42,7 +42,4 @@ class AppModule {
     @Singleton
     fun provideUIThreadExecutor(): UIThreadExecutor = UIThreadExecutor.getInstance()
 
-    @Provides
-    @Singleton
-    fun provideLoginFrom() = LoginForm()
 }
